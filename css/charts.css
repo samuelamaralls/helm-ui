@@ -1,0 +1,387 @@
+/* --- Grid Container (Pequenas otimizações) --- */
+.content .charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Card Principal --- */
+.content .chart-card {
+    background: var(--background-secondary, #ffffff);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 2.2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 340px;
+    border: 1px solid rgba(234, 237, 242, 0.6);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+}
+
+.content .chart-card:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12), 0 6px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px) scale(1.03);
+    border-color: rgba(0, 123, 255, 0.3);
+}
+
+/* --- Cabeçalho do Card (Título e Logo) --- */
+.content .chart-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.content .chart-card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-heading, #2d3748);
+}
+
+.content .chart-logo {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f0f4f8;
+    padding: 6px;
+}
+
+/* --- Conteúdo do Card --- */
+.content .chart-desc {
+    color: var(--color-text-secondary, #5c6c7d);
+    margin-bottom: 1.8rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.content .chart-meta,
+.content .chart-meta-2 {
+    font-size: 0.95rem;
+    color: var(--color-text-tertiary, #718096);
+    margin-bottom: 1.5rem;
+    list-style: none;
+    padding-left: 0;
+    /* Propriedades para centralizar o UL */
+    width: fit-content; /* Ocupa apenas a largura necessária para o conteúdo */
+    margin-left: auto;   /* Centraliza horizontalmente */
+    margin-right: auto;  /* Centraliza horizontalmente */
+}
+
+.content .chart-meta li,
+.content .chart-meta-2 li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    /* Remova este padding-left se ele não for mais necessário para outro propósito */
+    /* padding-left: 1.5em; */
+}
+
+.content .chart-meta li::before,
+.content .chart-meta-2 li::before {
+    content: ""; /* Mantém vazio */
+    /* Remova estas propriedades, elas não são mais necessárias sem o bullet */
+    /* position: absolute; */
+    /* left: 0; */
+    /* color: #a0aec0; */
+    /* font-weight: bold; */
+    /* font-size: 1.2em; */
+    /* line-height: 1; */
+}
+
+.content .chart-meta strong,
+.content .chart-meta-2 strong {
+    color: var(--color-text-primary, #2d3748) !important;
+    font-weight: 700;
+}
+
+/* --- Botão Principal (Usar Chart) - RENOMEADO DE .download-link PARA .use-chart-btn --- */
+.content .use-chart-btn { /* Classe atualizada */
+    background: linear-gradient(90deg, #6a82fb, #fc5c7d); /* GRADIENTE APLICADO */
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border-radius: 12px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none; /* Mantido para caso queira usar <a> no futuro */
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-top: auto;
+    align-self: flex-start;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 20px -5px rgba(106, 130, 251, 0.6); /* SOMBRA DO GRADIENTE */
+    border: none;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Adicionado para button */
+}
+
+.content .use-chart-btn:hover {
+    background: linear-gradient(90deg, #5163d7, #e04a6b); /* GRADIENTE NO HOVER */
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px -5px rgba(106, 130, 251, 0.8); /* SOMBRA DO GRADIENTE NO HOVER */
+}
+
+.content .use-chart-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px -3px rgba(106, 130, 251, 0.4);
+}
+
+
+/* --- Responsividade (Ajustes para mobile) --- */
+@media (max-width: 768px) {
+    .content .charts-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+        padding: 1.5rem 1rem;
+    }
+    .content .chart-card {
+        padding: 1.8rem 1.2rem;
+        min-height: auto;
+    }
+    .content .chart-card-header h2 {
+        font-size: 1.3rem;
+    }
+    .content .chart-logo {
+        width: 48px;
+        height: 48px;
+    }
+    .content .chart-desc {
+        font-size: 0.95rem;
+    }
+    .content .use-chart-btn { /* Classe atualizada */
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+/* Exemplo de cores para o modo escuro, se aplicável */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-secondary: #2d3748;
+        --color-heading: #e2e8f0;
+        --color-text-primary: #f0f4f8;
+        --color-text-secondary: #a0aec0;
+        --color-text-tertiary: #718096;
+    }
+
+    .content .chart-card {
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(74, 85, 104, 0.6);
+    }
+    .content .chart-card:hover {
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6), 0 6px 15px rgba(0, 0, 0, 0.4);
+        border-color: rgba(0, 123, 255, 0.5);
+    }
+    .content .chart-logo {
+        background: #3e4a59;
+    }
+    .content .chart-meta li::before,
+    .content .chart-meta-2 li::before {
+        color: #718096;
+    }
+}
+
+/* --- Modal (Pop-up de Valores) --- */
+.values-modal {
+    display: none; /* Controlado via JavaScript para mostrar/esconder */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* Fundo mais escuro para maior contraste */
+    align-items: center; /* ESSENCIAL para centralizar com display: flex; via JS */
+    justify-content: center; /* ESSENCIAL para centralizar com display: flex; via JS */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.values-modal-content {
+    background: var(--background-secondary, #ffffff);
+    color: var(--color-text-primary, #2d3748);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12), 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: 1px solid rgba(234, 237, 242, 0.6);
+    text-align: left;
+
+    /* --- ADICIONADO: Contenção de altura e rolagem para o modal em si --- */
+    max-height: 90vh; /* Limita a altura máxima do modal para 90% da altura da viewport */
+    display: flex; /* Adiciona display flex para organizar o conteúdo interno */
+    flex-direction: column; /* Coloca os itens em coluna (título, pre, botão) */
+}
+
+/* --- ADICIONADO/AJUSTADO: Estilos para o conteúdo <pre> dentro do modal --- */
+.values-modal-content pre {
+    background: var(--background-primary, #f0f4f8); /* Fundo mais escuro para o código */
+    color: var(--color-text-primary, #2d3748);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem; /* Espaço acima do bloco de código */
+    margin-bottom: 2rem; /* Espaço abaixo do bloco de código, antes do botão */
+    white-space: pre-wrap; /* Quebra de linha para conteúdo longo */
+    word-wrap: break-word; /* Quebra de palavras longas */
+
+    /* --- ESSENCIAL: Rolagem para o conteúdo de valores --- */
+    max-height: calc(90vh - 180px); /* Ajusta a altura máxima para caber na tela, subtraindo o padding, título, e botão */
+    overflow-y: auto; /* Adiciona barra de rolagem vertical quando o conteúdo exceder */
+    -webkit-overflow-scrolling: touch; /* Melhora a rolagem em dispositivos iOS */
+    border: 1px solid rgba(234, 237, 242, 0.8); /* Borda sutil para o bloco de código */
+}
+
+/* Ajustes menores para elementos já existentes no modal */
+.values-modal-content h3 {
+    margin-bottom: 0.8rem; /* Espaçamento menor para o título do modal */
+    font-size: 1.8rem;
+    color: var(--color-heading, #2d3748);
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: var(--color-text-tertiary, #718096);
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: var(--color-heading, #2d3748);
+}
+
+/* --- Botão de Copiar (Dentro do Modal) --- */
+.copy-btn {
+    margin-top: 2rem;
+    background: linear-gradient(90deg, #6a82fb, #fc5c7d) !important; /* GRADIENTE APLICADO */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem 2.2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 20px -5px rgba(106, 130, 251, 0.6); /* SOMBRA DO GRADIENTE */
+    letter-spacing: 0.5px;
+    width: 100%;
+    flex-shrink: 0; /* Impede que o botão encolha */
+}
+
+.copy-btn:hover {
+    background: linear-gradient(90deg, #5163d7, #e04a6b); /* GRADIENTE NO HOVER */
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px -5px rgba(106, 130, 251, 0.8); /* SOMBRA DO GRADIENTE NO HOVER */
+}
+
+.copy-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px -3px rgba(106, 130, 251, 0.4);
+}
+
+/* --- Botão de Mostrar Valores (Fora do Modal) --- */
+/* Esta seção será mantida caso o botão 'Ver Default Values' ainda seja usado em alguma página de detalhes.
+   Se ele não for mais usado em NENHUM lugar, pode ser removida.
+*/
+.show-values-btn {
+    background: linear-gradient(90deg, #6a82fb, #fc5c7d) !important; /* Adicionado !important aqui */
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    /* margin-bottom: 1.5rem; REMOVIDO PARA USAR APENAS margin-top */
+    margin-top: 2rem; /* Mantido o ajuste de margem para o botão na página de detalhes */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 8px 20px -5px rgba(106, 130, 251, 0.6); /* SOMBRA DO GRADIENTE */
+    letter-spacing: 0.5px;
+    display: inline-block; /* Permite centralização e respeita margins */
+    text-align: center;
+    text-decoration: none;
+}
+
+.show-values-btn:hover {
+    background: linear-gradient(90deg, #5163d7, #e04a6b); /* GRADIENTE NO HOVER */
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px -5px rgba(106, 130, 251, 0.8);
+}
+
+.show-values-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px -3px rgba(106, 130, 251, 0.4);
+}
+
+/* --- Responsividade para o Modal (Ajustes para mobile) --- */
+@media (max-width: 768px) {
+    .values-modal-content {
+        padding: 1.8rem 1.5rem;
+        margin: 5vh auto;
+    }
+
+    .close-modal {
+        font-size: 1.8rem;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .copy-btn,
+    .use-chart-btn, /* Adicionado para responsividade */
+    .show-values-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+    .values-modal-content pre {
+        max-height: calc(90vh - 150px); /* Ajuste para mobile, pode precisar de ajuste fino */
+    }
+}
+
+/* --- Modo Escuro para o Modal e Botões (ajustes para gradiente) --- */
+@media (prefers-color-scheme: dark) {
+    .values-modal-content {
+        background: var(--background-secondary, #2d3748);
+        color: var(--color-text-primary, #f0f4f8);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4), 0 6px 15px rgba(0, 0, 0, 0.2);
+        border: 1px solid rgba(74, 85, 104, 0.6);
+    }
+
+    .values-modal-content pre {
+        background: var(--background-primary, #1a202c);
+        border: 1px solid rgba(74, 85, 104, 0.8);
+        color: #e2e8f0;
+    }
+
+    .close-modal {
+        color: var(--color-text-tertiary, #718096);
+    }
+
+    .close-modal:hover {
+        color: var(--color-heading, #2261b4);
+    }
+
+    .use-chart-btn, /* Atualizado */
+    .copy-btn,
+    .show-values-btn {
+        box-shadow: 0 8px 20px -5px rgba(106, 130, 251, 0.4);
+    }
+
+    .use-chart-btn:hover, /* Atualizado */
+    .copy-btn:hover,
+    .show-values-btn:hover {
+        box-shadow: 0 12px 25px -5px rgba(106, 130, 251, 0.6);
+    }
+}
