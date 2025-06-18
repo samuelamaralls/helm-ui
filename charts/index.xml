@@ -6,13 +6,34 @@
     <description>Recent content in Charts on Helm Charts UI</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://samuelamaralls.github.io/helm-ui/charts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Aplic</title>
+      <link>https://samuelamaralls.github.io/helm-ui/charts/aplic/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://samuelamaralls.github.io/helm-ui/charts/aplic/</guid>
+      <description>Aplic Helm Chart Este é o Helm Chart padrão para criação de aplicações na empresa XPTO.&#xA;📌 Descrição Prometheus é uma ferramenta de monitoramento e alerta projetada para registros de séries temporais de métricas.&#xA;Este chart oferece uma instalação flexível e configurável, permitindo integração com ServiceMonitors, Alertmanager e Grafana.&#xA;📂 Estrutura do Chart prometheus/ ├── Chart.yaml ├── values.yaml ├── templates/ │ ├── deployment.yaml │ ├── service.yaml │ ├── servicemonitor.yaml │ ├── configmap.</description>
+    </item>
+    <item>
+      <title>Aplic</title>
+      <link>https://samuelamaralls.github.io/helm-ui/charts/aplic2/</link>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://samuelamaralls.github.io/helm-ui/charts/aplic2/</guid>
+      <description>Aplic Helm Chart Este é o Helm Chart padrão para criação de aplicações na empresa XPTO.&#xA;📌 Descrição Prometheus é uma ferramenta de monitoramento e alerta projetada para registros de séries temporais de métricas.&#xA;Este chart oferece uma instalação flexível e configurável, permitindo integração com ServiceMonitors, Alertmanager e Grafana.&#xA;📂 Estrutura do Chart prometheus/ ├── Chart.yaml ├── values.yaml ├── templates/ │ ├── deployment.yaml │ ├── service.yaml │ ├── servicemonitor.yaml │ ├── configmap.</description>
+    </item>
+    <item>
       <title>Prometheus</title>
-      <link>https://samuelamaralls.github.io/helm-ui/charts/chart-1/</link>
+      <link>https://samuelamaralls.github.io/helm-ui/charts/prometheus/</link>
       <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>https://samuelamaralls.github.io/helm-ui/charts/chart-1/</guid>
+      <guid>https://samuelamaralls.github.io/helm-ui/charts/prometheus/</guid>
+      <description>Prometheus Helm Chart Este Helm Chart instala o Prometheus em um cluster Kubernetes.&#xA;📌 Descrição Prometheus é uma ferramenta de monitoramento e alerta projetada para registros de séries temporais de métricas.&#xA;Este chart oferece uma instalação flexível e configurável, permitindo integração com ServiceMonitors, Alertmanager e Grafana.&#xA;📂 Estrutura do Chart prometheus/ ├── Chart.yaml ├── values.yaml ├── templates/ │ ├── deployment.yaml │ ├── service.yaml │ ├── servicemonitor.yaml │ ├── configmap.yaml │ └── &amp;hellip; └── README.</description>
+    </item>
+    <item>
+      <title>Prometheus</title>
+      <link>https://samuelamaralls.github.io/helm-ui/charts/prometheus2/</link>
+      <pubDate>Tue, 10 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://samuelamaralls.github.io/helm-ui/charts/prometheus2/</guid>
       <description>Prometheus Helm Chart Este Helm Chart instala o Prometheus em um cluster Kubernetes.&#xA;📌 Descrição Prometheus é uma ferramenta de monitoramento e alerta projetada para registros de séries temporais de métricas.&#xA;Este chart oferece uma instalação flexível e configurável, permitindo integração com ServiceMonitors, Alertmanager e Grafana.&#xA;📂 Estrutura do Chart prometheus/ ├── Chart.yaml ├── values.yaml ├── templates/ │ ├── deployment.yaml │ ├── service.yaml │ ├── servicemonitor.yaml │ ├── configmap.yaml │ └── &amp;hellip; └── README.</description>
     </item>
   </channel>
